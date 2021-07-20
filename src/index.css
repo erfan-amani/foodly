@@ -1,6 +1,18 @@
+:root {
+  --white: #fff;
+  --bakground-white: #fff5fd;
+  --dark-gray: #333333;
+  --light-gray: #f2f2f2;
+  --light-orange: #ff7a00;
+}
+
 html,
 body {
   font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: var(--bakground-white);
 }
 
 /* Extra small devices (phones, 600px and down) */
