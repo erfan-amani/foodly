@@ -1,0 +1,11 @@
+.cart-button {
+  align-self: center;
+  border: 3px solid var(--dark-gray);
+  padding: 7px 25px 2px 25px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.cart-icon {
+  width: 1.6rem;
+}
