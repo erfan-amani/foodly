@@ -9,3 +9,9 @@
 .cart-icon {
   width: 1.6rem;
 }
+
+.cart-button:hover {
+  background-color: var(--light-gray);
+  transform: scale(1.1);
+  transition: all 0.3s;
+}
