@@ -1,0 +1,35 @@
+.meal-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: var(--white);
+  box-shadow: 3px 3px 10px rgba(68, 27, 3, 0.15);
+  color: var(--dark-gray);
+  border-bottom: 3px solid transparent;
+}
+
+.meal-item:hover {
+  border-bottom: 3px solid var(--light-orange);
+  transform: translateY(-7px);
+  transition: transform 1s;
+}
+
+.meal-item .image {
+  width: 100%;
+}
+
+.meal-item .text {
+  display: flex;
+  padding: 10px 20px;
+}
+
+.meal-item .name {
+  font-size: 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.meal-item .price {
+  font-size: 1.1rem;
+}
