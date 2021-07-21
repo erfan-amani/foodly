@@ -52,6 +52,7 @@ const CategoryList = () => {
     <div className={style['category-list']}>
       {CATEGORIS_DATA.map((item) => (
         <CategoryItem
+          key={item.title}
           title={item.title}
           image={item.imageSrc}
           selected={selectedCategory === item.title}
