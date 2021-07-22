@@ -4,6 +4,8 @@
   padding: 7px 25px 2px 25px;
   border-radius: 10px;
   cursor: pointer;
+
+  position: relative;
 }
 
 .cart-icon {
@@ -14,4 +16,15 @@
   background-color: var(--light-gray);
   transform: scale(1.1);
   transition: all 0.3s;
+}
+
+.badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+  background-color: var(--white);
+  padding: 0px 7px;
+  border-radius: 50px;
+  border: 2px solid var(--dark-gray);
 }

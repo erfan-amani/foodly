@@ -9,6 +9,7 @@ const CartButton = ({ onClick }) => {
         src={cartIcon}
         alt="shopping cart icon"
       />
+      <span className={style.badge}>0</span>
     </div>
   );
 };
