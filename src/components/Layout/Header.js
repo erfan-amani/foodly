@@ -2,12 +2,12 @@ import CartButton from '../Cart/CartButton';
 import style from './Header.module.css';
 import headerImage from '../../assets/img/header.jpg';
 
-const Header = () => {
+const Header = ({ onOpenCart }) => {
   return (
     <>
       <div className={style.nav}>
         <h1>Foodly</h1>
-        <CartButton />
+        <CartButton onClick={onOpenCart} />
       </div>
       <header className={style.header}>
         <img
