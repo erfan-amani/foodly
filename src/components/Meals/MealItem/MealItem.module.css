@@ -18,9 +18,15 @@
   width: 100%;
 }
 
+.meal-item .detail {
+  display: grid;
+  height: 100%;
+  gap: 20px;
+  padding: 10px 20px 15px 20px;
+}
+
 .meal-item .text {
   display: flex;
-  padding: 10px 20px;
 }
 
 .meal-item .name {

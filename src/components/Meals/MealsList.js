@@ -9,7 +9,7 @@ const MealsList = () => {
         <MealItem
           key={meal.id}
           name={meal.name}
-          price={13.5}
+          price={meal.price}
           category={meal.category}
           image={meal.image}
         />

@@ -1,0 +1,44 @@
+.form {
+  display: flex;
+  grid: 20px;
+  align-items: center;
+  justify-content: center;
+
+  align-self: end;
+}
+
+.form .count {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-grow: 1;
+}
+
+.form .input {
+  width: 20px;
+  text-align: center;
+  border: 2px solid var(--light-orange);
+  border-radius: 5px;
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--light-orange);
+  border-radius: 5px;
+  padding: 1px;
+  cursor: pointer;
+}
+
+.icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.submit {
+  color: var(--white);
+  background-color: var(--light-orange);
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+}
