@@ -1,6 +1,7 @@
+import NumberInput from '../UI/NumberInput';
 import style from './CartItem.module.css';
-
 import img from '../../assets/img/pizza/pizza-boscaiola.jpeg';
+import ClearIcon from '../UI/Icon/ClearIcon';
 
 const CartItem = () => {
   return (
@@ -12,7 +13,10 @@ const CartItem = () => {
           <span className={style.price}>$13.5</span>
         </div>
         <div className={style.action}>
-          <input type="text" />
+          <NumberInput />
+          <span className={style.clear}>
+            <ClearIcon />
+          </span>
         </div>
       </div>
     </div>

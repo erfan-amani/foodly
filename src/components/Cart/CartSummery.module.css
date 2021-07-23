@@ -1,0 +1,40 @@
+.summery {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 2rem;
+  background-color: var(--light-gray);
+}
+.detail {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.data {
+  display: flex;
+}
+.data p {
+  flex-grow: 1;
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+.close-button {
+  border: none;
+  cursor: pointer;
+  background-color: var(--light-gray);
+  padding: 0 20px;
+  font-size: 0.9rem;
+}
+
+.checkout-button {
+  border: 2px solid var(--light-orange);
+  background-color: var(--light-orange);
+  color: var(--white);
+  padding: 5px 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 300;
+}
