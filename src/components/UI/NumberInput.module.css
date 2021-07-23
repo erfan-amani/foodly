@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-grow: 1;
+}
+
+.input {
+  width: 20px;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  padding: 1px;
+  cursor: pointer;
+}
+
+.icon svg {
+  width: 20px;
+  height: 20px;
+}
