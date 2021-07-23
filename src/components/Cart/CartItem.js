@@ -1,19 +1,21 @@
 import NumberInput from '../UI/NumberInput';
 import style from './CartItem.module.css';
-import img from '../../assets/img/pizza/pizza-boscaiola.jpeg';
 import ClearIcon from '../UI/Icon/ClearIcon';
 
-const CartItem = () => {
+const CartItem = ({ image, name, price, amount, category }) => {
+  const imageSrc = require(`../../assets/img/${category.toLowerCase()}/${image}`);
+  const formattedPrice = `$${price.toFixed(2)}`;
+
   return (
     <div className={style['cart-item']}>
-      <img className={style.image} src={img} alt="meal" />
+      <img className={style.image} src={imageSrc} alt="meal" />
       <div className={style.detail}>
         <div className={style.data}>
-          <h4 className={style.name}>Pizza Dummy</h4>
-          <span className={style.price}>$13.5</span>
+          <h4 className={style.name}>{name}</h4>
+          <span className={style.price}>{formattedPrice}</span>
         </div>
         <div className={style.action}>
-          <NumberInput />
+          <NumberInput amount={amount} />
           <span className={style.clear}>
             <ClearIcon />
           </span>
