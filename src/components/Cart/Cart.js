@@ -7,6 +7,7 @@ import CartList from './CartList';
 
 const Cart = ({ onCloseCart }) => {
   const cartCtx = useContext(CartContext);
+  const isEmpty = cartCtx.items.length === 0;
 
   const totalPrice = cartCtx.items.reduce(
     (acc, item) => acc + item.price * item.amount,
@@ -20,8 +21,13 @@ const Cart = ({ onCloseCart }) => {
           items={cartCtx.items}
           addItemHandler={cartCtx.addItem}
           removeItemHandler={cartCtx.removeItem}
+          isEmpty={isEmpty}
         />
-        <CartSummery onCloseCart={onCloseCart} total={totalPrice} />
+        <CartSummery
+          onCloseCart={onCloseCart}
+          total={totalPrice}
+          isEmpty={isEmpty}
+        />
       </div>
     </Modal>
   );

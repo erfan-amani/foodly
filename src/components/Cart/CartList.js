@@ -1,11 +1,11 @@
 import CartItem from './CartItem';
 import style from './CartList.module.css';
 
-const CartList = ({ items, addItemHandler, removeItemHandler }) => {
+const CartList = ({ items, addItemHandler, removeItemHandler, isEmpty }) => {
   let renderedList = (
     <p>Cart is empry. First choose your meals from menu 🍔.</p>
   );
-  if (items.length !== 0)
+  if (!isEmpty)
     renderedList = items.map((item) => (
       <CartItem
         key={item.id}

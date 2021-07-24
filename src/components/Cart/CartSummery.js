@@ -1,6 +1,6 @@
 import style from './CartSummery.module.css';
 
-const CartSummery = ({ onCloseCart, total }) => {
+const CartSummery = ({ onCloseCart, total, isEmpty }) => {
   const formattedTotal = `$${total.toFixed(2)}`;
 
   return (
@@ -20,7 +20,9 @@ const CartSummery = ({ onCloseCart, total }) => {
         <button className={style['close-button']} onClick={onCloseCart}>
           close
         </button>
-        <button className={style['checkout-button']}>Checkout</button>
+        {!isEmpty && (
+          <button className={style['checkout-button']}>Checkout</button>
+        )}
       </div>
     </div>
   );
