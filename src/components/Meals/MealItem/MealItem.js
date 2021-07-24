@@ -3,25 +3,18 @@ import CartContext from '../../../store/cart-context';
 import style from './MealItem.module.css';
 import MealItemForm from './MealItemForm';
 
-const MealItem = ({ name, price, category, image }) => {
+const MealItem = (props) => {
   const cartCtx = useContext(CartContext);
 
-  const imageSrc = require(`../../../assets/img/${category
+  const imageSrc = require(`../../../assets/img/${props.category
     .toLowerCase()
     .split(' ')
-    .join('-')}/${image}`).default;
+    .join('-')}/${props.image}`).default;
 
-  const formattedPrice = `$${price.toFixed(2)}`;
+  const formattedPrice = `$${props.price.toFixed(2)}`;
 
   const addItemToCart = (amount) => {
-    cartCtx.addItem({
-      id: name.split(' ').join('-'),
-      name: name,
-      category: category,
-      amount: amount,
-      price: price,
-      image: image,
-    });
+    cartCtx.addItem({ ...props, amount: amount });
   };
 
   return (
@@ -29,10 +22,10 @@ const MealItem = ({ name, price, category, image }) => {
       <img className={style.image} src={imageSrc} alt="delicious meal" />
       <div className={style.detail}>
         <div className={style.text}>
-          <h3 className={style.name}>{name}</h3>
+          <h3 className={style.name}>{props.name}</h3>
           <p className={style.price}>{formattedPrice}</p>
         </div>
-        <MealItemForm price={price} onSubmit={addItemToCart} />
+        <MealItemForm price={props.price} onSubmit={addItemToCart} />
       </div>
     </div>
   );

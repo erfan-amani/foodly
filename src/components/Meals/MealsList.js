@@ -6,13 +6,7 @@ const MealsList = () => {
   return (
     <div className={style['meals-list']}>
       {MEALS_DATA.map((meal) => (
-        <MealItem
-          key={meal.id}
-          name={meal.name}
-          price={meal.price}
-          category={meal.category}
-          image={meal.image}
-        />
+        <MealItem key={meal.id} {...meal} />
       ))}
     </div>
   );

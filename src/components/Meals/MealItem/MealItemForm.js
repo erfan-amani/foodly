@@ -15,6 +15,7 @@ const MealItemForm = ({ price, onSubmit }) => {
     event.preventDefault();
 
     onSubmit(enteredAmount);
+    setEnteredAmount(1);
   };
 
   const increaseAmountHandler = () => {
