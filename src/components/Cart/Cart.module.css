@@ -2,3 +2,9 @@
   display: flex;
   color: var(--dark-gray);
 }
+
+@media only screen and (max-width: 768px) {
+  .cart-container {
+    flex-direction: column;
+  }
+}

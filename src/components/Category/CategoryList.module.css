@@ -1,14 +1,14 @@
 .category-list {
-  /* display: flex;
-  align-items: center;
-  justify-content: center;
-  */
-  gap: 1.5rem;
-
+  gap: 1rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, 6rem);
-  /* grid-template-columns: repeat(auto-fit, minmax(4rem, 5.75rem)); */
   justify-content: center;
 
   padding-top: 2.5rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .category-list {
+    grid-template-rows: repeat(9, 9rem);
+  }
 }

@@ -10,8 +10,9 @@
 .items {
   display: flex;
   flex-direction: column;
-  gap: 25px;
-  height: 50vh;
+  gap: 1.56rem;
+  max-height: 40vh;
+  min-height: 25vh;
   overflow-y: scroll;
   padding-right: 1rem;
 }
@@ -32,11 +33,3 @@
   border-radius: 0.625rem;
   background-color: var(--light-orange);
 }
-
-/* @media only screen and (max-width: 768px) {
-  .items::-webkit-scrollbar-track,
-  .items::-webkit-scrollbar,
-  .items::-webkit-scrollbar-thumb {
-    display: none;
-  }
-} */

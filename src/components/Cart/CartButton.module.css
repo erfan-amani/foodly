@@ -1,6 +1,6 @@
 .cart-button {
   align-self: center;
-  border: 3px solid var(--dark-gray);
+  border: 0.18rem solid var(--dark-gray);
   padding: 0.5rem 1.56rem 2px 1.56rem;
   border-radius: 0.625rem;
   cursor: pointer;
@@ -26,5 +26,5 @@
   background-color: var(--white);
   padding: 0px 0.5rem;
   border-radius: 3.125rem;
-  border: 2px solid var(--dark-gray);
+  border: 0.125rem solid var(--dark-gray);
 }
