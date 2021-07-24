@@ -17,7 +17,10 @@ const CartSummery = ({ onCloseCart, total, isEmpty }) => {
         </div>
       </div>
       <div className={style.buttons}>
-        <button className={style['close-button']} onClick={onCloseCart}>
+        <button
+          className={`${style['close-button']} ${isEmpty ? style.orange : ''}`}
+          onClick={onCloseCart}
+        >
           close
         </button>
         {!isEmpty && (
