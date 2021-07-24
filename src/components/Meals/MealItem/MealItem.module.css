@@ -1,16 +1,16 @@
 .meal-item {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 0.625rem;
   background-color: var(--white);
-  box-shadow: 3px 3px 10px rgba(68, 27, 3, 0.15);
+  box-shadow: 3px 3px 0.625rem rgba(68, 27, 3, 0.15);
   color: var(--dark-gray);
   border-bottom: 3px solid transparent;
 }
 
 .meal-item:hover {
   border-bottom: 3px solid var(--light-orange);
-  transform: translateY(-7px);
+  transform: translateY(-0.5rem);
   transition: transform 1s;
 }
 
@@ -21,8 +21,8 @@
 .meal-item .detail {
   display: grid;
   height: 100%;
-  gap: 20px;
-  padding: 10px 20px 15px 20px;
+  gap: 1.25rem;
+  padding: 0.625rem 1.25rem 1rem 1.25rem;
 }
 
 .meal-item .text {

@@ -1,6 +1,6 @@
 .meals {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 1.25rem;
   padding-bottom: 2.5rem;
 }

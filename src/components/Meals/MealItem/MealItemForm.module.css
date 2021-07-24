@@ -1,6 +1,6 @@
 .form {
   display: flex;
-  grid: 20px;
+  gap: 1.25rem;
   align-items: center;
   justify-content: center;
 
@@ -10,7 +10,7 @@
 .submit {
   color: var(--white);
   background-color: var(--light-orange);
-  padding: 5px 10px;
+  padding: 5px 0.625rem;
   border: none;
   cursor: pointer;
 }

@@ -107,16 +107,14 @@ section {
   font-family: inherit;
 }
 
-/*
 ::-moz-selection {
-	background-color: #b3d4fc;
-	color: #000000;
-	text-shadow: none;
+  background-color: var(--light-orange);
+  color: var(--white);
+  text-shadow: none;
 }
 
 ::selection {
-	background-color: #b3d4fc; 
-	color: #000000;
-	text-shadow: none;
+  background-color: var(--light-orange);
+  color: var(--white);
+  text-shadow: none;
 }
-*/
