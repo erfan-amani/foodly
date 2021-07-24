@@ -1,12 +1,12 @@
 import style from './CategoryItem.module.css';
 
-const CategoryItem = ({ title, image, selected, changeCategoryHandler }) => {
+const CategoryItem = ({ title, image, selectCategoryHandler, isActive }) => {
   const imageSrc = require(`../../assets/img/categories/${image}`).default;
 
   return (
     <div
-      className={`${style.item}  ${selected ? style.active : ''}`}
-      onClick={() => changeCategoryHandler(title)}
+      className={`${style.item}  ${isActive ? style.active : ''}`}
+      onClick={() => selectCategoryHandler(title)}
     >
       <img
         className={style.icon}

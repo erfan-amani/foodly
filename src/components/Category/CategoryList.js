@@ -1,64 +1,25 @@
-import { useState } from 'react';
+import { useContext } from 'react';
+import MealsContext from '../../store/meals-context';
 import CategoryItem from './CategoryItem';
 import style from './CategoryList.module.css';
-
-const CATEGORIS_DATA = [
-  {
-    title: 'Pizza',
-    imageSrc: 'pizza.png',
-  },
-  {
-    title: 'Fast food',
-    imageSrc: 'fast-food.png',
-  },
-  {
-    title: 'Indian',
-    imageSrc: 'indian.png',
-  },
-  {
-    title: 'Italian',
-    imageSrc: 'italian.png',
-  },
-  {
-    title: 'Mexican',
-    imageSrc: 'mexican.png',
-  },
-  {
-    title: 'Thai',
-    imageSrc: 'thai.png',
-  },
-  {
-    title: 'Sushi',
-    imageSrc: 'sushi.png',
-  },
-  {
-    title: 'Salad',
-    imageSrc: 'salad.png',
-  },
-  {
-    title: 'Drink',
-    imageSrc: 'drink.png',
-  },
-];
+import { CATEGORIES_DATA } from './categoriesData';
 
 const CategoryList = () => {
-  const [selectedCategory, setSelectedCategory] = useState('Pizza');
-
-  const changeCategoryHandler = (id) => {
-    setSelectedCategory(id);
-  };
+  const mealsCtx = useContext(MealsContext);
 
   return (
     <div className={style['category-list']}>
-      {CATEGORIS_DATA.map((item) => (
-        <CategoryItem
-          key={item.title}
-          title={item.title}
-          image={item.imageSrc}
-          selected={selectedCategory === item.title}
-          changeCategoryHandler={changeCategoryHandler}
-        />
-      ))}
+      {CATEGORIES_DATA.map((item) => {
+        return (
+          <CategoryItem
+            key={item.title}
+            title={item.title}
+            image={item.imageSrc}
+            selectCategoryHandler={mealsCtx.selectCategoryHandler}
+            isActive={mealsCtx.selectedCategory === item.title}
+          />
+        );
+      })}
     </div>
   );
 };

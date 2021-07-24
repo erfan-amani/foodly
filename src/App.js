@@ -5,6 +5,7 @@ import CategoryList from './components/Category/CategoryList';
 import Header from './components/Layout/Header';
 import Meals from './components/Meals/Meals';
 import CartProvider from './store/CartProvider';
+import MealsProvider from './store/MealsProvider';
 
 const App = () => {
   const [isCartIsVisible, setIsCartIsVisible] = useState(false);
@@ -22,8 +23,10 @@ const App = () => {
       {isCartIsVisible && <Cart onCloseCart={closeCart} />}
       <Header onOpenCart={openCart} />
       <main className={style.main}>
-        <CategoryList />
-        <Meals />
+        <MealsProvider>
+          <CategoryList />
+          <Meals />
+        </MealsProvider>
       </main>
     </CartProvider>
   );
