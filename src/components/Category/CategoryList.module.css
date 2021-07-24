@@ -9,6 +9,6 @@
 
 @media only screen and (max-width: 600px) {
   .category-list {
-    grid-template-rows: repeat(9, 9rem);
+    grid-template-rows: repeat(9, 8rem);
   }
 }

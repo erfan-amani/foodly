@@ -3,3 +3,9 @@
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   gap: 2.25rem;
 }
+
+@media only screen and (max-width: 600px) {
+  .meals-list {
+    grid-template-columns: repeat(auto-fit, 1fr);
+  }
+}
