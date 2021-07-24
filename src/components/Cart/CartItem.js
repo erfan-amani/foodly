@@ -2,8 +2,20 @@ import NumberInput from '../UI/NumberInput';
 import style from './CartItem.module.css';
 import ClearIcon from '../UI/Icon/ClearIcon';
 
-const CartItem = ({ image, name, price, amount, category }) => {
-  const imageSrc = require(`../../assets/img/${category.toLowerCase()}/${image}`);
+const CartItem = ({
+  image,
+  name,
+  price,
+  amount,
+  category,
+  addItemHandler,
+  removeItemHandler,
+  clearWholeItem,
+}) => {
+  const imageSrc = require(`../../assets/img/${category
+    .toLowerCase()
+    .split(' ')
+    .join('-')}/${image}`).default;
   const formattedPrice = `$${price.toFixed(2)}`;
 
   return (
@@ -15,8 +27,13 @@ const CartItem = ({ image, name, price, amount, category }) => {
           <span className={style.price}>{formattedPrice}</span>
         </div>
         <div className={style.action}>
-          <NumberInput amount={amount} />
-          <span className={style.clear}>
+          <NumberInput
+            amount={amount}
+            value={amount}
+            onAdd={addItemHandler}
+            onRemove={removeItemHandler}
+          />
+          <span className={style.clear} onClick={clearWholeItem}>
             <ClearIcon />
           </span>
         </div>

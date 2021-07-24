@@ -16,7 +16,11 @@ const Cart = ({ onCloseCart }) => {
   return (
     <Modal onClose={onCloseCart}>
       <div className={style['cart-container']}>
-        <CartList items={cartCtx.items} />
+        <CartList
+          items={cartCtx.items}
+          addItemHandler={cartCtx.addItem}
+          removeItemHandler={cartCtx.removeItem}
+        />
         <CartSummery onCloseCart={onCloseCart} total={totalPrice} />
       </div>
     </Modal>

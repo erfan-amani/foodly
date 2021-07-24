@@ -18,7 +18,7 @@ const ClearIcon = () => {
         d="M80 112H432"
         stroke="black"
         strokeWidth="32"
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
         strokeLinecap="round"
       />
       <path
