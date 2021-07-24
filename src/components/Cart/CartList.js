@@ -10,14 +10,11 @@ const CartList = ({ items, addItemHandler, removeItemHandler, isEmpty }) => {
       <CartItem
         key={item.id}
         {...item}
-        addItemHandler={addItemHandler.bind(null, { ...item, amount: 1 })}
-        removeItemHandler={removeItemHandler.bind(null, {
-          id: item.id,
-          amount: 1,
-        })}
+        addItemHandler={addItemHandler.bind(null, { id: item.id })}
+        removeItemHandler={removeItemHandler.bind(null, { id: item.id })}
         clearWholeItem={removeItemHandler.bind(null, {
           id: item.id,
-          amount: item.amount,
+          clear: true,
         })}
       />
     ));
