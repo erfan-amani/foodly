@@ -1,15 +1,24 @@
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import CartContext from '../../store/cart-context';
 import cartIcon from '../../assets/icons/cart-outline.svg';
 import style from './CartButton.module.css';
 
 const CartButton = ({ onClick }) => {
-  const cartCtx = useContext(CartContext);
+  const { items } = useContext(CartContext);
+  const [btnIsHigh, setBtnIsHigh] = useState(false);
+  const className = `${style['cart-button']} ${btnIsHigh ? style.bump : ''}`;
 
-  const badgeNumber = cartCtx.items.reduce((acc, item) => acc + item.amount, 0);
+  useEffect(() => {
+    setBtnIsHigh(true);
+    const timerId = setTimeout(() => setBtnIsHigh(false), 300);
+
+    return () => clearTimeout(timerId);
+  }, [items]);
+
+  const badgeNumber = items.reduce((acc, item) => acc + item.amount, 0);
 
   return (
-    <div className={style['cart-button']} onClick={onClick}>
+    <div className={className} onClick={onClick}>
       <img
         className={style['cart-icon']}
         src={cartIcon}
