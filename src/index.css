@@ -13,16 +13,12 @@ body {
 
 body {
   background-color: var(--bakground-white);
-  padding: 0 3rem !important;
 }
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   html {
     font-size: 11px;
-  }
-  body {
-    padding: 1rem 1rem !important;
   }
 }
 
