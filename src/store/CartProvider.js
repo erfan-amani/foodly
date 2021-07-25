@@ -42,7 +42,7 @@ const cartReducer = (state, action) => {
 
     const existingCartItem = state.items[existingCartItemIndex];
 
-    if (action.clear) {
+    if (action.clear || existingCartItem.amount === 1) {
       updatedItems = state.items.filter(
         (item, i) => i !== existingCartItemIndex
       );

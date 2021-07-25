@@ -7,7 +7,10 @@ const MealItemForm = ({ price, onSubmit }) => {
 
   const changeAmountHandler = (event) => {
     const value = event.target.value;
-    if (value < 0) return;
+    if (value < 0) {
+      setEnteredAmount(1);
+      return;
+    }
     setEnteredAmount(event.target.value);
   };
 
@@ -23,7 +26,7 @@ const MealItemForm = ({ price, onSubmit }) => {
   };
   const decreaseAmountHandler = () => {
     setEnteredAmount((prev) => {
-      if (+prev === 0) return 0;
+      if (+prev === 1) return 1;
       return prev - 1;
     });
   };
