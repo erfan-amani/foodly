@@ -1,22 +1,27 @@
-.summery {
+.cart-form {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 2rem;
+  padding: 3rem;
   background-color: var(--light-gray);
-}
-.detail {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-.data {
-  display: flex;
-}
-.data p {
-  flex-grow: 1;
+  width: 50%;
 }
 
+.form-control input {
+  padding: 0.4rem;
+  border: 2px solid #ccc;
+  width: 100%;
+}
+.form-control input:focus {
+  outline: none;
+  border-color: var(--light-orange);
+}
+.form-control.invalid input {
+  border-color: rgb(173, 55, 55);
+}
+.error-text {
+  color: rgb(206, 5, 5);
+}
 .buttons {
   display: flex;
   justify-content: flex-end;
@@ -40,4 +45,16 @@
   cursor: pointer;
   font-size: 1rem;
   font-weight: 300;
+}
+.checkout-button:disabled {
+  background-color: #ccc;
+  border-color: #ccc;
+  color: var(--dark-gray);
+  font-weight: normal;
+}
+
+@media only screen and (max-width: 768px) {
+  .cart-form {
+    width: unset;
+  }
 }

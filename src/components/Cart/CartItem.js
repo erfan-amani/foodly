@@ -17,6 +17,7 @@ const CartItem = ({
     .split(' ')
     .join('-')}/${image}`).default;
   const formattedPrice = `$${price.toFixed(2)}`;
+  const total = price * amount;
 
   return (
     <div className={style['cart-item']}>
@@ -24,7 +25,10 @@ const CartItem = ({
       <div className={style.detail}>
         <div className={style.data}>
           <h4 className={style.name}>{name}</h4>
-          <span className={style.price}>{formattedPrice}</span>
+          {/* <span className={style.price}>{formattedPrice}</span> */}
+          <span className={style.clear} onClick={clearWholeItem}>
+            <ClearIcon />
+          </span>
         </div>
         <div className={style.action}>
           <NumberInput
@@ -33,9 +37,10 @@ const CartItem = ({
             onAdd={addItemHandler}
             onRemove={removeItemHandler}
           />
-          <span className={style.clear} onClick={clearWholeItem}>
+          <span className={style.price}>{`$${total.toFixed(2)}`}</span>
+          {/* <span className={style.clear} onClick={clearWholeItem}>
             <ClearIcon />
-          </span>
+          </span> */}
         </div>
       </div>
     </div>

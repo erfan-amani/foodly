@@ -21,8 +21,14 @@
 
 @media (min-width: 768px) {
   .modal {
-    width: 60rem;
-    left: calc(50% - 30rem);
+    width: 58rem;
+    left: calc(50% - 29rem);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .modal {
+    top: 4vh;
   }
 }
 

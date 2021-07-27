@@ -4,7 +4,7 @@
 }
 
 .image {
-  width: 8rem;
+  width: 6rem;
 }
 
 .detail {
@@ -20,20 +20,23 @@
 .name {
   flex-grow: 1;
   font-weight: 500;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 .price {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 300;
 }
 
 .action {
   display: flex;
 }
+.action div {
+  gap: 0;
+}
 .clear {
   cursor: pointer;
 }
 .clear svg {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.4rem;
+  height: 1.4rem;
 }

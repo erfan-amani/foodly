@@ -2,30 +2,26 @@ import { useContext } from 'react';
 import CartContext from '../../store/cart-context';
 import Modal from '../UI/Modal';
 import style from './Cart.module.css';
-import CartSummery from './CartSummery';
+import CartForm from './CartForm';
 import CartList from './CartList';
 
 const Cart = ({ onCloseCart }) => {
   const cartCtx = useContext(CartContext);
 
-  const totalPrice = cartCtx.items.reduce(
-    (acc, item) => acc + item.price * item.amount,
-    0
-  );
-
   return (
     <Modal onClose={onCloseCart}>
       <div className={style['cart-container']}>
+        <CartForm
+          items={cartCtx.items}
+          clearCart={cartCtx.clearCart}
+          onCloseCart={onCloseCart}
+          total={cartCtx.totalAmount}
+        />
         <CartList
           items={cartCtx.items}
           addItemHandler={cartCtx.addItem}
           removeItemHandler={cartCtx.removeItem}
-        />
-        <CartSummery
-          items={cartCtx.items}
-          clearCart={cartCtx.clearCart}
-          onCloseCart={onCloseCart}
-          total={totalPrice}
+          total={cartCtx.totalAmount}
         />
       </div>
     </Modal>
