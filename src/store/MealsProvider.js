@@ -1,24 +1,33 @@
-import { useReducer } from 'react';
+import { useCallback, useReducer } from 'react';
 import MealsContext from './meals-context';
-import { MEALS_DATA } from '../mealsData';
 
-const pizzas = MEALS_DATA.filter((meal) => meal.category === 'Pizza');
 const defaultMealsState = {
-  meals: pizzas,
+  meals: [],
+  filteredMeals: [],
   selectedCategory: 'Pizza',
 };
 
 const mealsReducer = (state, action) => {
+  if (action.type === 'INITIAL_MEALS') {
+    const pizzas = action.data.filter((meal) => meal.category === 'Pizza');
+
+    return {
+      meals: action.data,
+      filteredMeals: pizzas,
+      selectedCategory: state.selectedCategory,
+    };
+  }
   if (action.type === 'SELECT_CATEGORY') {
     const updatedCategory = action.category;
 
-    const filteredMeals = MEALS_DATA.filter(
+    const updatedFilteredMeals = state.meals.filter(
       (meal) => meal.category === updatedCategory
     );
 
     return {
-      meals: filteredMeals,
-      selectedCategory: action.category,
+      meals: state.meals,
+      filteredMeals: updatedFilteredMeals,
+      selectedCategory: updatedCategory,
     };
   }
 
@@ -35,10 +44,16 @@ const MealsProvider = (props) => {
     dispatchMealsAction({ type: 'SELECT_CATEGORY', category: category });
   };
 
+  const initialMealsData = useCallback((data) => {
+    dispatchMealsAction({ type: 'INITIAL_MEALS', data });
+  }, []);
+
   const mealsContext = {
     meals: mealsState.meals,
     selectedCategory: mealsState.selectedCategory,
+    filteredMeals: mealsState.filteredMeals,
     selectCategoryHandler: selectCategoryHandler,
+    initialMealsData: initialMealsData,
   };
 
   return (
