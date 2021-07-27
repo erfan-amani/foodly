@@ -11,18 +11,8 @@ const Cart = ({ onCloseCart }) => {
   return (
     <Modal onClose={onCloseCart}>
       <div className={style['cart-container']}>
-        <CartForm
-          items={cartCtx.items}
-          clearCart={cartCtx.clearCart}
-          onCloseCart={onCloseCart}
-          total={cartCtx.totalAmount}
-        />
-        <CartList
-          items={cartCtx.items}
-          addItemHandler={cartCtx.addItem}
-          removeItemHandler={cartCtx.removeItem}
-          total={cartCtx.totalAmount}
-        />
+        <CartForm onCloseCart={onCloseCart} />
+        <CartList />
       </div>
     </Modal>
   );

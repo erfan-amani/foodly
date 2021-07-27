@@ -12,8 +12,12 @@ const Meals = () => {
   useEffect(() => {
     const applyData = (data) => {
       const mealsArray = [];
+      console.log(data);
       for (const key in data) {
-        mealsArray.push(data[key]);
+        mealsArray.push({
+          id: key,
+          ...data[key],
+        });
       }
 
       initialMealsData(mealsArray);
@@ -27,7 +31,7 @@ const Meals = () => {
     );
   }, [sendRequest, initialMealsData]);
 
-  let content;
+  let content = <p>Sorry we are close right now. NO MEALS!</p>;
   if (isLoading) content = <p>Loading...</p>;
   if (error) content = <p>Something went wrong!</p>;
   if (filteredMeals.length > 0) content = <MealsList meals={filteredMeals} />;

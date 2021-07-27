@@ -1,7 +1,16 @@
+import { useContext } from 'react';
 import CartItem from './CartItem';
+import CartContext from '../../store/cart-context';
 import style from './CartList.module.css';
 
-const CartList = ({ items, addItemHandler, removeItemHandler, total }) => {
+const CartList = () => {
+  const {
+    items,
+    addItem: addItemHandler,
+    removeItem: removeItemHandler,
+    totalAmount,
+  } = useContext(CartContext);
+
   const isEmpty = items.length === 0;
 
   let renderedList = (
@@ -29,7 +38,7 @@ const CartList = ({ items, addItemHandler, removeItemHandler, total }) => {
       <div className={style['cart-data']}>
         <div>
           <p className={style.total}>Total</p>
-          <span>${total.toFixed(2)}</span>
+          <span>${totalAmount.toFixed(2)}</span>
         </div>
         <div>
           <p className={style.ship}>Shipping</p>

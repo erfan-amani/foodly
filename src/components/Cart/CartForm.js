@@ -1,11 +1,15 @@
+import { useContext } from 'react';
 import style from './CartForm.module.css';
+import CartContext from '../../store/cart-context';
 import useRequest from '../../hooks/use-request';
 import useInput from '../../hooks/use-input';
 
-const CartForm = ({ items, onCloseCart, total, clearCart }) => {
-  const { sendRequest, isLoading, error } = useRequest();
+const CartForm = ({ onCloseCart }) => {
+  const { items, totalAmount, clearCart } = useContext(CartContext);
 
-  const formattedTotal = `$${total.toFixed(2)}`;
+  const { sendRequest, isLoading: isSubmithing, error } = useRequest();
+
+  const formattedTotal = `$${totalAmount.toFixed(2)}`;
   const isEmpty = items.length === 0;
 
   const {
@@ -84,8 +88,9 @@ const CartForm = ({ items, onCloseCart, total, clearCart }) => {
     <form className={style['cart-form']} onSubmit={submissionHandler}>
       <h2>Checkout</h2>
       <div className={nameInputClasses}>
-        <label>Full Name *</label>
+        <label htmlFor="name">Full Name *</label>
         <input
+          id="name"
           type="text"
           value={name}
           onChange={nameChangeHandler}
@@ -96,8 +101,9 @@ const CartForm = ({ items, onCloseCart, total, clearCart }) => {
         )}
       </div>
       <div className={addressInputClasses}>
-        <label>Address *</label>
+        <label htmlFor="address">Address *</label>
         <input
+          id="address"
           type="text"
           value={address}
           onChange={addressChangeHandler}
@@ -108,8 +114,9 @@ const CartForm = ({ items, onCloseCart, total, clearCart }) => {
         )}
       </div>
       <div className={postCodeInputClasses}>
-        <label>Post Code *</label>
+        <label htmlFor="post-code">Post Code *</label>
         <input
+          id="post-code"
           type="text"
           value={postCode}
           onChange={postCodeChangeHandler}
@@ -129,7 +136,7 @@ const CartForm = ({ items, onCloseCart, total, clearCart }) => {
           close
         </button>
         <button className={style['checkout-button']} disabled={!formIsValid}>
-          {isLoading ? 'Loading...' : `Checkout ${formattedTotal}`}
+          {isSubmithing ? 'Submiting...' : `Checkout ${formattedTotal}`}
         </button>
       </div>
     </form>
