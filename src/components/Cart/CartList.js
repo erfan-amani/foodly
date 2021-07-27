@@ -1,7 +1,9 @@
 import CartItem from './CartItem';
 import style from './CartList.module.css';
 
-const CartList = ({ items, addItemHandler, removeItemHandler, isEmpty }) => {
+const CartList = ({ items, addItemHandler, removeItemHandler }) => {
+  const isEmpty = items.length === 0;
+
   let renderedList = (
     <p>Cart is empry. First choose your meals from menu 🍔.</p>
   );
